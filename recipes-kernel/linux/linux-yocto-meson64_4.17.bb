@@ -25,6 +25,7 @@ SRC_URI = "git://git.kernel.org/pub/scm/linux/kernel/git/stable/linux-stable.git
            file://0014-clk-meson-audio-divider-fix-divider.patch \
            file://0015-clk-meson-gxbb-set-fclk_div2.patch \
            file://defconfig \
+           file://0001-ARM64-dts-add-S805X-based-Libretech-AC-board.patch \
            "
 
 KERNEL_VERSION_SANITY_SKIP="1"
