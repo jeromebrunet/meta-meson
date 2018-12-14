@@ -1,0 +1,38 @@
+From 40d542954a372d893dd3bc753d352131d5a1f8a6 Mon Sep 17 00:00:00 2001
+From: Neil Armstrong <narmstrong@baylibre.com>
+Date: Mon, 17 Dec 2018 10:18:16 +0100
+Subject: [PATCH] arm: dts: s400: Fix status for eMMC and SDIO ports
+
+Under U-boot, the WiFi SDIO Module should be disabled and the
+eMMC modules should be enabled, so this patch adds an -u-boot.dtsi
+include file specific for U-Boot.
+
+Signed-off-by: Neil Armstrong <narmstrong@baylibre.com>
+---
+ arch/arm/dts/meson-axg-s400-u-boot.dtsi | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+ create mode 100644 arch/arm/dts/meson-axg-s400-u-boot.dtsi
+
+diff --git a/arch/arm/dts/meson-axg-s400-u-boot.dtsi b/arch/arm/dts/meson-axg-s400-u-boot.dtsi
+new file mode 100644
+index 0000000000..c46eb3f38d
+--- /dev/null
++++ b/arch/arm/dts/meson-axg-s400-u-boot.dtsi
+@@ -0,0 +1,14 @@
++// SPDX-License-Identifier: (GPL-2.0+ OR MIT)
++/*
++ * Copyright (c) 2017 Amlogic, Inc. All rights reserved.
++ */
++
++/* wifi module */
++&sd_emmc_b {
++	status = "disabled";
++};
++
++/* emmc storage */
++&sd_emmc_c {
++	status = "okay";
++};
+-- 
+2.19.2
+
